@@ -1,0 +1,65 @@
+/* Minimal CSS Reset */
+
+html {
+  box-sizing: border-box;
+  font-size: 12px;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body, h1, h2, h3, h4, h5, h6, p, ol, ul {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+.boximage {
+  display: flex;
+  justify-content: center;
+}
+
+.Myimage {
+ 
+	height: 260px;
+	width: 260px;
+	border-radius: 50%;
+	background-image: url(images/MyPhoto1.jpg);
+	background-position: center;
+	background-size: 130%;
+   }
+
+.Myimage:before,
+.Myimage:after {
+    content: "";
+    position: absolute;
+    background: linear-gradient(60deg, #94bbee, #ffffff, #94bbee, #ffffff, #94bbee, #ffffff);
+    background-size: 300%;
+    width: 260px;
+    height: 260px;
+    display: flex;
+    border-radius: 50%;
+    z-index: -1;
+    animation: steam 30s linear infinite;
+}
+
+@keyframes steam {
+    0% {
+        background-position: 0 0;
+    }
+    50% {
+        background-position: 400% 0;
+    }
+    100% {
+        background-position: 0 0;
+    }
+}
+
+.Myimage:after {
+    filter: blur(35px);
+}
